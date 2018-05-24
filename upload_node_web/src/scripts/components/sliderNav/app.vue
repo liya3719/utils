@@ -1,0 +1,13 @@
+<template lang="jade">
+  .slider-nav(:class="[isAnimate ? 'animate': '']")
+    ul
+      li
+        a(href="index.html") 首页
+      li
+        a(href="list.html") 图片列表
+    .switch(@click="switchNav") {{ switchText }}
+</template>
+<style lang="less">
+  @import "./app.less";
+</style>
+<script lang="ts" src="./app.ts"></script>

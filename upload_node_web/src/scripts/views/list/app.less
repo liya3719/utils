@@ -1,0 +1,41 @@
+.list {
+    .title {
+        padding-top: 25px;
+        font-size: 36px;
+        font-weight: bold;
+        text-align: center;
+    }
+    .image-list {
+        width: 1280px;
+        margin: 35px auto 0;
+        .sub-title {
+            font-weight: bold;
+        }
+        .sub-title,
+        .item {
+            height: 50px;
+            line-height: 50px;
+            font-size: 16px;
+            text-align: center;
+            border-bottom: #ddd solid 1px;
+            .number {
+                float: left;
+                width: 20%;
+            }
+            .url {
+                float: left;
+                width: 55%;
+                white-space: nowrap;
+            }
+            .thumbnail {
+                float: left;
+                width: 25%;
+            }
+        }
+        .item {
+            &:nth-child(odd) {
+                background: #f9f9f9;
+            }
+        }
+    }
+}

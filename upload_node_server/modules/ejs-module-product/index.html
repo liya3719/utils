@@ -1,0 +1,51 @@
+<div class="ejs-module-product-wrapper">
+  <div class="more-products">
+    <h2 class="title"><%=moduleTitle%></h2>
+    <% for (var i = 0;i < products.length;i++) {
+      var productItem = products[i];%>
+      <div class="inner-wraper">
+        <h5><%=productItem.productsName%></h5>
+        <ul class="product-list">
+          <% for (var j = 0;j < productItem.list.length;j++) {
+            var item = productItem.list[j];%>
+            <li class="product">
+              <div class="left-info">
+                <div class="product-title">
+                  <span class="more-products-icon <%=item.productIconName%>" >
+                  </span>
+                  <span class="title1">
+                    <%=item.productTitle%>
+                  </span>
+                  <span class="desc1">
+                    <%=item.productDesc%>
+                  </span>
+                </div>
+                <% if (item.productSetting && item.productSetting.length > 0) {%>
+                  <ul>
+                    <% for (var k = 0;k < item.productSetting.length;k++) {
+                      if (k == 0) {%>
+                        <li class="first"><%=item.productSetting[k].settingName%></li>
+                      <%} else if (k == item.productSetting.length - 1) {%>
+                       <li class="last"><%=item.productSetting[k].settingName%></li>
+                      <%} else {%>
+                       <li class="center"><%=item.productSetting[k].settingName%></li>
+                      <%}
+                    }%>
+                  </ul>
+                <%}%>
+              </div>
+              <div class="right-info">
+                <span class="right-desc"><%=item.buyDesc%></span>
+                <span class="right-price">
+                  <%=item.price%>
+                </span>
+                <a class="product-buy-btn" href="<%=item.btnLink%>"
+                  target="<%=(item.btnBlank == true ? '_blank' :'')%>"><%=item.btnText%></a>
+              </div>
+            </li>
+          <%}%>
+        </ul>
+      </div>
+    <%}%>
+  </div>
+</div>

@@ -1,0 +1,49 @@
+{
+  "name": "upload_node_web",
+  "version": "0.0.1",
+  "description": "图片上传前端部分",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "dev": "node index.js -d",
+    "build": "node index.js -b",
+    "serve": "node index.js -s"
+  },
+  "author": "liya",
+  "license": "ISC",
+  "devDependencies": {
+    "@nat/freedom-middleware-mock2easy": "~0.0.2",
+    "@nat/freedom-middleware-webpack2": "1.0.0",
+    "@types/axios": "^0.14.0",
+    "@types/node": "^8.5.1",
+    "@types/vue": "^2.0.0",
+    "animate.css": "^3.5.2",
+    "axios": "^0.17.1",
+    "babel-polyfill": "^6.26.0",
+    "colors": "^1.1.2",
+    "commander": "^2.12.2",
+    "compression-webpack-plugin": "^1.1.3",
+    "copy-webpack-plugin": "^4.3.1",
+    "express": "^4.16.2",
+    "hammerjs": "^2.0.8",
+    "http-proxy-middleware": "^0.17.4",
+    "jsonp": "^0.2.1",
+    "reflect-metadata": "^0.1.10",
+    "serve-static": "^1.13.1",
+    "tern": "^0.21.0",
+    "typedi": "^0.6.0",
+    "vue": "^2.5.11",
+    "vue-awesome-swiper": "^3.0.7",
+    "vue-class-component": "^6.1.2",
+    "vue-property-decorator": "^6.0.0",
+    "vue-touch": "^2.0.0-beta.4"
+  },
+  "proxy": [
+    "/api"
+  ],
+  "dependencies": {
+    "@nat/heibao-utils": "^1.0.5"
+  }
+}
