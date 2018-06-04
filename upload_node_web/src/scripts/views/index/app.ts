@@ -22,6 +22,8 @@ const CommonService = new commonService();
 })
 export default class uploadView extends BaseView {
   id: number = 0;
+  isLogin: boolean = false;
+  userName: string = '';
   loginModal: boolean = false;
   registerModal: boolean = false;
   login_user_name: string = '';
@@ -42,8 +44,13 @@ export default class uploadView extends BaseView {
    */
   init() {
     this.getUserId();
+    let userName = this.getUserName();
     if (!this.userId) {
       this.loginModal = !this.loginModal;
+    }
+    if (userName) {
+      this.userName = userName;
+      this.isLogin = true;
     }
   }
   /**
@@ -80,6 +87,13 @@ export default class uploadView extends BaseView {
     this.userId = Number(CommonService.getCookie('user_id'));
   }
   /**
+   * 获取本地保存的用户名
+   */
+  getUserName() {
+    let userName = localStorage.getItem('user_name');
+    return userName;
+  }
+  /**
    * 注册
    */
   async registerHandler() {
@@ -97,10 +111,17 @@ export default class uploadView extends BaseView {
   async loginHandler() {
     let _self = this;
     let res: IndexModel.loginModel = await Container.get<IndexService>("indexservice").login(_self.login_user_name, _self.login_password);
+    console.log(res);
     if (res.code === 10000) {
       _self.loginModal = false;
+      _self.isLogin = true;
+      //@ts-ignore
+      _self.userName = res.user_name;
+      //@ts-ignore
+      localStorage.setItem('user_name', res.user_name)
     } else if (res.code === 20001) {
       _self.loginTips = true;
+      _self.isLogin = true;
     }
   }
   /**

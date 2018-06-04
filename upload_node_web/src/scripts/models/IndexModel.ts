@@ -21,7 +21,7 @@ export module IndexModel {
    * 登录数据实体
    */
   export class loginModel extends BaseModel {
-    res: loginData = new loginData();
+    loginData = new loginData();
   };
 
   export class uploadData {

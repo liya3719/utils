@@ -33,6 +33,5 @@ export default class List extends BaseView {
     if (result.total > 0) {
       _self.imgList = result.list;
     }
-    console.log(_self.imgList);
   }
 }
