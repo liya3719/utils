@@ -1,6 +1,8 @@
 const fs = require('fs');
+const shell = require('shelljs');
 const config = require('config');
 const baseUrl = 'http://static.51talk.com/fe-static/images/';
+import { mkdirService } from '../mkdir/mkdirService';
 /**
  * 处理图片信息流&&图片写入
  */
@@ -11,6 +13,10 @@ export class writeFileService {
    */
   async writeFileHandler(file): Promise<any> {
     return new Promise((resolve, reject) => {
+      // 上传图片前先创建保存图片的文件夹
+      let dirPath = mkdirService.createDirPath();
+      mkdirService.isCreateFolder(dirPath);
+      // 判断图片大小，如果超过150kb，提示错误
       if (file.size > 153600) {
         resolve({
           code: 20008,

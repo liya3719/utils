@@ -4,6 +4,8 @@ import { UploadModel } from '../models/IndexUploadModel';
 import { IIndexUploadService } from '../interface/services/IIndexUploadService';
 import { writeFileService } from '../common/writeFile/writeFileService';
 import { cookieService } from '../common/messageCookie/cookieService';
+import { publishService } from '../common/publish/publishService';
+const shell = require('shelljs');
 const util = require('heibao-utils');
 const writeFile = new writeFileService();
 const CookieService = new cookieService();
@@ -24,6 +26,7 @@ export class IndexUpload {
   /**
    * 注册
    * @param registerModel 准备注册的用户实体
+   * @return Object { code: number, message: string}
    */
   @Post('/register')
   async registerAction(@Body() registerModel: UploadModel.RegisterModule, @Ctx() context: any): Promise<any> {
@@ -46,6 +49,7 @@ export class IndexUpload {
   /**
    * 登录
    * @param loginModel 登录用户实体
+   * @return Object {code: number, message: string}
    */
   @Post('/login')
   async loginAction(@Body() loginModel: UploadModel.LoginModel, @Ctx() ctx: any): Promise<any> {
@@ -71,13 +75,14 @@ export class IndexUpload {
   /**
    * 上传
    * @param uploadModel 上传数据实体
+   * @return Object{ code: number, message: string}
    */
   @Post('/upload')
   async uploadAction(@UploadedFile("filename") file: any, @Ctx() ctx: any): Promise<any> {
+    // 获取前端传过来的信息流之后，把文件解码保存到指定目录
     let writeMessage = await writeFile.writeFileHandler(file);
-    console.log(writeMessage);
-    console.log(`ctx --------> ${JSON.stringify(ctx.request.header.cookie)}`);
     let user_id = CookieService.getCookie('user_id', ctx.request.header.cookie);
+    // 保存成功后把链接保存到数据库
     if (writeMessage.code === 10000) {
       let uploadConfig: any = {
         user_id: user_id,
@@ -85,7 +90,6 @@ export class IndexUpload {
         update_time: util.dateFormat('yyyy/MM/dd hh:mm:ss', new Date())
       }
       let result = await this.indexServiceInstance.upload(uploadConfig);
-      console.log(`controllers层 上传图片接口返回的数据${JSON.stringify(result)}`)
       if (result) {
         return {
           code: 10000,
@@ -97,6 +101,21 @@ export class IndexUpload {
           message: '上传失败'
         }
       }
+    } else {
+      return {
+        code: writeMessage.code,
+        message: writeMessage.message
+      };
     }
+  }
+  /**
+     * 同步到gitlab
+     * @return Object {code: number, message: string}
+     */
+  @Post('/sync/gitlab')
+  async syncGitlabAction() {
+    console.log('start______________________________');
+    let res = await publishService.syncGitlabService();
+    return res;
   }
 }

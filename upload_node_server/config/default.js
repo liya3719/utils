@@ -17,7 +17,6 @@ module.exports.compiledDir = "build";
  */
 module.exports.dependencyInjectConf = [
   "dataAccess",
-  "services",
-  "common/mkdir/mkdirService.js"
+  "services"
   //"controllers/ControllerLoader.js"
 ];

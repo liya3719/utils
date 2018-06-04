@@ -59,7 +59,6 @@ export class IndexUploadService implements IIndexUploadService {
       update_time: uploadModel.update_time
     }
     let result = await this.dataAccessInstance.execSql(IndexSql.UploadImage, upload);
-    console.log(`service层 上传服务结果 ${JSON.stringify(result)}`);
     let res = result.result.insertId;
     if (res > 0) {
       return true;

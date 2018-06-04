@@ -18,6 +18,7 @@ export class GetImagesList {
   /**
    * 获取图片列表
    * @param {id} 用户id
+   * @return 图片列表实体
    */
   async getImagesListAction(@Param("id") id: number): Promise<ImagesLst.ImagesLstModel> {
     if (isNaN(id)) {

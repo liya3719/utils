@@ -11,7 +11,7 @@ export class cookieService {
     var cookieArr = cookies.split(';');
     for (var i = 0; i < cookieArr.length; i++) {
       var arr = cookieArr[i].split('=');
-      if (arr[0] === key) {
+      if (arr[0].trim() === key) {
         return arr[1];
       }
     }
