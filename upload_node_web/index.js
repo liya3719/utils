@@ -2,7 +2,6 @@ const path = require('path');
 const fs = require('fs');
 const program = require('commander');
 const pkg = require("./package.json");
-const mock2easy = require("@nat/freedom-middleware-mock2easy");
 const webpackBuild = require("@nat/freedom-middleware-webpack2");
 const proxyMiddleware = require('http-proxy-middleware');
 const app = require("express")();
@@ -62,7 +61,7 @@ if (originImportFileContent != commonImportFileContent) {
 const params = {
   port: 8886,
   env: "dev",
-  publicPath: `upload.51hawo.com/${projectName}/${version}`,
+  publicPath: `//static.51talk.com/${projectName}/${version}`,
   build: `build/${projectName}/${version}`,
   proxy: {
     context: pkg.proxy,
@@ -93,7 +92,6 @@ function dev(argument) {
   (async function () {
     await webpackBuild(params);
   })();
-  mock2easy();
 }
 
 function runServe() {
@@ -113,7 +111,6 @@ function runServe() {
     console.log(listenStr.bold.cyan);
     app.listen(8888);
   })();
-  mock2easy();
 }
 
 

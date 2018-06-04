@@ -22,4 +22,8 @@ export interface IndexInterface {
    * @param update_time 更新时间
    */
   upload(id: number, image: any, update_time: any): Promise<any>;
+  /**
+   * 同步到gitlba，不需要传参
+   */
+  syncGitlab(): Promise<any>;
 }

@@ -3,6 +3,7 @@
     .upload-topbar
       .upload-topbar__login(@click="showLoginModal") 登录
       .upload-topbar__register(@click="showRegisterModal") 注册
+      .upload-topbar__sync(@click="syncGitlabHandler") 同步到gitlab
     .upload-wrap
       .upload-wrap__input
         input(type="file", id="upload", @change="uploadImgHandler")

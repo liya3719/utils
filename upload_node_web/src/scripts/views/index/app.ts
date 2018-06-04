@@ -13,8 +13,9 @@ import SliderNav from '../../components/sliderNav/app.vue';
 import { IndexModel } from '../../models/IndexModel';
 import { IndexService } from '../../services/indexService';
 import { IndexInterface } from '../../interface/Iindex';
+import commonService from '../../common/common';
 const utils = require('@nat/heibao-utils');
-
+const CommonService = new commonService();
 
 @Component({
   components: { SliderNav }
@@ -30,7 +31,21 @@ export default class uploadView extends BaseView {
   uploading: boolean = false;
   registerTips: boolean = false;
   loginTips: boolean = false;
+  syncStatus: boolean = false;
+  userId: number;
   file: any;
+  mounted() {
+    this.init();
+  }
+  /**
+   * 页面初始化操作
+   */
+  init() {
+    this.getUserId();
+    if (!this.userId) {
+      this.loginModal = !this.loginModal;
+    }
+  }
   /**
    * 上传图片
    * @param event input file 
@@ -58,13 +73,20 @@ export default class uploadView extends BaseView {
     this.registerModal = !this.registerModal;
   }
   /**
+   * 获取浏览器cookie
+   */
+  getUserId() {
+    let id = CommonService.getCookie('user_id');
+    this.userId = Number(CommonService.getCookie('user_id'));
+  }
+  /**
    * 注册
    */
   async registerHandler() {
     let _self = this;
     let res: IndexModel.RegisterModel = await Container.get<IndexService>("indexservice").register(_self.register_user_name, _self.register_password)
     if (res.code === 10000) {
-      _self.registerModal = !_self.registerModal;
+      _self.registerModal = false;
     } else if (res.code === 20001) {
       _self.registerTips = true;
     }
@@ -76,7 +98,7 @@ export default class uploadView extends BaseView {
     let _self = this;
     let res: IndexModel.loginModel = await Container.get<IndexService>("indexservice").login(_self.login_user_name, _self.login_password);
     if (res.code === 10000) {
-      _self.loginModal = !_self.loginModal;
+      _self.loginModal = false;
     } else if (res.code === 20001) {
       _self.loginTips = true;
     }
@@ -87,12 +109,38 @@ export default class uploadView extends BaseView {
   async uploadHandler() {
     let _self = this;
     let form: any = new FormData();
+    form.append('filename', _self.file);
+    if (Object.prototype.toString.call(form.get('filename')) === '[object String]') {
+      alert('请选择上传的图片')
+      return false;
+    }
     if (_self.uploading) return;
     _self.uploading = true;
-    form.append('filename', _self.file);
     let res: IndexModel.UploadModel = await Container.get<IndexService>("indexservice").upload(form)
     if (res.code === 10000) {
+      alert(res.message);
       _self.uploading = false;
+    } else if (res.code === 20001) {
+      alert(res.message);
+      _self.uploading = false;
+    } else if (res.code === 20008) {
+      alert(res.message);
+      _self.uploading = false;
+    }
+  }
+  /**
+   * 同步到gitlab
+   */
+  async syncGitlabHandler() {
+    let _self = this;
+    if (!_self.syncStatus) {
+      _self.syncStatus = true;
+      let res: any = await Container.get<IndexService>('indexservice').syncGitlab();
+      if (res.code === 10000) {
+        _self.syncStatus = false;
+      } else {
+        _self.syncStatus = false;
+      }
     }
   }
 }

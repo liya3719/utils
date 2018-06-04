@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { Service } from 'typedi';
 import { IndexInterface } from '../interface/Iindex';
+import { resolve } from 'url';
 @Service('indexservice')
 
 export class IndexService implements IndexInterface {
@@ -53,6 +54,20 @@ export class IndexService implements IndexInterface {
         url: '/api/upload',
         method: 'POST',
         data: data,
+        headers: { 'Content-Type': 'multipart/form-data' }
+      }).then((res) => {
+        resolve(res.data);
+      })
+    })
+  }
+  /**
+   * 同步到gitlab操作，不需要传参
+   */
+  syncGitlab(): Promise<any> {
+    return new Promise((resolve, reject) => {
+      axios({
+        url: '/api/sync/gitlab',
+        method: 'POST',
         headers: { 'Content-Type': 'multipart/form-data' }
       }).then((res) => {
         resolve(res.data);

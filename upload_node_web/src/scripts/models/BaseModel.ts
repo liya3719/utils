@@ -3,5 +3,5 @@
  */
 export default class BaseModel {
   code: number;
-  msg: string;
+  message: string;
 }
