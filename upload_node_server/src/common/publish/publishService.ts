@@ -20,16 +20,13 @@ export class publishService {
       'ref': 'release'
     }
     shell.cd('/data/fe-online/apollo/fe-static/')
-    console.log(`${process.cwd()}`);
     // 从release创建新的分支
-    let res = await publishUtils.createNewBranch(request, id, data);
-    console.log(`创建分支返回的json ————————> ${JSON.stringify(res)}`)
-    shell.exec(`git fetch origin ${pms}: ${pms}`);
+    await publishUtils.createNewBranch(request, id, data);
+    shell.exec(`git fetch origin ${pms}:${pms}`);
     shell.exec(`git checkout ${pms}`);
     shell.exec('git pull origin release');
     //拷贝fe-static下images文件夹到fe-online/apollo/fe-static/下面
-    shell.cp('-R', `/data/fe-static/images`, `${process.cwd()}`);
-    console.log(`进入到apollo __________ ${process.cwd()}`);
+    shell.cp('-R', `/data/fe-static/images`, `/data/fe-online/apollo/fe-static/`);
     shell.exec('git add .');
     shell.exec(`git commit -am ${pms}`);
     shell.exec(`git push origin ${pms}`);
