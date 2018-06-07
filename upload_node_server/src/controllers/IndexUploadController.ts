@@ -80,8 +80,8 @@ export class IndexUpload {
   @Post('/upload')
   async uploadAction(@UploadedFile("filename") file: any, @Ctx() ctx: any): Promise<any> {
     // 获取前端传过来的信息流之后，把文件解码保存到指定目录
-    let writeMessage = await writeFile.writeFileHandler(file);
     let user_id = CookieService.getCookie('user_id', ctx.request.header.cookie);
+    let writeMessage = await writeFile.writeFileHandler(file, user_id);
     // 保存成功后把链接保存到数据库
     if (writeMessage.code === 10000) {
       let uploadConfig: any = {

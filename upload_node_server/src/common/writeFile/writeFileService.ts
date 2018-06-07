@@ -1,7 +1,7 @@
 const fs = require('fs');
 const shell = require('shelljs');
 const config = require('config');
-const baseUrl = 'http://static.51talk.com/fe-static/images/';
+const baseUrl = 'http://static.51talk.com/apollo/fe-static/images/';
 import { mkdirService } from '../mkdir/mkdirService';
 /**
  * 处理图片信息流&&图片写入
@@ -11,7 +11,7 @@ export class writeFileService {
    * 上传图片获取信息流写入磁盘文件
    * @param file 图片流信息集合
    */
-  async writeFileHandler(file): Promise<any> {
+  async writeFileHandler(file, id): Promise<any> {
     return new Promise((resolve, reject) => {
       // 上传图片前先创建保存图片的文件夹
       let dirPath = mkdirService.createDirPath();
@@ -23,6 +23,7 @@ export class writeFileService {
           message: '图片超过150KB，请压缩后重新上传'
         })
       }
+      // 开始对图片流写入到指定位置
       fs.writeFile(`${config.imagesUrl}${file.originalname}`, file.buffer, (err) => {
         if (err) {
           resolve({
@@ -30,10 +31,15 @@ export class writeFileService {
             message: '服务器繁忙，请稍候再试'
           })
         } else {
+          // 对图片以当前用户id进行重命名
+          let image = file.originalname;
+          let name = image.split('.')[0];
+          let suffix = image.split('.')[1];
+          fs.renameSync(`${config.imagesUrl}${file.originalname}`, `${config.imagesUrl}${name}_${id}.${suffix}`);
           resolve({
             code: 10000,
             message: '写入成功',
-            url: `${baseUrl}${file.originalname}`
+            url: `${baseUrl}${name}_${id}.${suffix}`
           })
         }
       })

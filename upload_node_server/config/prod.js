@@ -12,12 +12,12 @@ module.exports.loggerSetting = {
 module.exports.imagesUrl = '/data/fe-static/images/';
 
 module.exports.dbConfig = {
-    host: "172.16.16.32",
-    user: "root",
-    password: "qwe#1234",
-    database: "upload",
+    host: "服务器ip",
+    user: "用户名",
+    password: "密码",
+    database: "数据库名字",
     connectionLimit: 10,
-    port: "3306",
+    port: "端口",
     waitForConnections: false,
     multipleStatements: true
 };
