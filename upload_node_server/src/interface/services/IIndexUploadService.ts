@@ -14,6 +14,11 @@ export interface IIndexUploadService {
    */
   login(loginModel: UploadModel.LoginModel): Promise<UploadModel.LoginModel>;
   /**
+   * 上传前判断图片是否存在
+   * @param imageName 图片名称
+   */
+  imageIsExist(imageName): Promise<object>;
+  /**
    * 上传接口
    * @param ploadModel 上传接口数据实体
    */

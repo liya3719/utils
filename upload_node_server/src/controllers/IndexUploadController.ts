@@ -62,13 +62,15 @@ export class IndexUpload {
     } else {
       for (var i in result) {
         var id = result[i].id;
+        var user_name = result[i].user_name;
       }
       ctx.cookies.set('user_id', id, {
         httpOnly: false
       })
       return {
         code: 10000,
-        message: '登录成功'
+        message: '登录成功',
+        user_name: user_name
       }
     }
   }
@@ -79,33 +81,47 @@ export class IndexUpload {
    */
   @Post('/upload')
   async uploadAction(@UploadedFile("filename") file: any, @Ctx() ctx: any): Promise<any> {
-    // 获取前端传过来的信息流之后，把文件解码保存到指定目录
     let user_id = CookieService.getCookie('user_id', ctx.request.header.cookie);
-    let writeMessage = await writeFile.writeFileHandler(file, user_id);
-    // 保存成功后把链接保存到数据库
-    if (writeMessage.code === 10000) {
-      let uploadConfig: any = {
-        user_id: user_id,
-        image_url: writeMessage.url,
-        update_time: util.dateFormat('yyyy/MM/dd hh:mm:ss', new Date())
+    let originalname = file.originalname;
+    let name = originalname.split('.')[0];
+    let suffix = originalname.split('.')[1];
+    let imageName = `${name}_${user_id}.${suffix}`;
+    // 判断图片是否存在
+    let nameRes = await this.indexServiceInstance.imageIsExist(imageName);
+    //@ts-ignore
+    if (nameRes.isExists) {
+      return {
+        code: 20009,
+        message: '图片已存在，请修改名字后再上传'
       }
-      let result = await this.indexServiceInstance.upload(uploadConfig);
-      if (result) {
-        return {
-          code: 10000,
-          message: '上传成功'
+    } else {
+      // 获取前端传过来的信息流之后，把文件解码保存到指定目录
+      let writeMessage = await writeFile.writeFileHandler(file, user_id);
+      // 保存成功后把链接保存到数据库
+      if (writeMessage.code === 10000) {
+        let uploadConfig: any = {
+          user_id: user_id,
+          image_url: writeMessage.url,
+          update_time: util.dateFormat('yyyy/MM/dd hh:mm:ss', new Date())
+        }
+        let result = await this.indexServiceInstance.upload(uploadConfig);
+        if (result) {
+          return {
+            code: 10000,
+            message: '上传成功'
+          }
+        } else {
+          return {
+            code: 20001,
+            message: '上传失败'
+          }
         }
       } else {
         return {
-          code: 20001,
-          message: '上传失败'
-        }
+          code: writeMessage.code,
+          message: writeMessage.message
+        };
       }
-    } else {
-      return {
-        code: writeMessage.code,
-        message: writeMessage.message
-      };
     }
   }
   /**
@@ -114,7 +130,6 @@ export class IndexUpload {
      */
   @Post('/sync/gitlab')
   async syncGitlabAction() {
-    console.log('start______________________________');
     let res = await publishService.syncGitlabService();
     return res;
   }

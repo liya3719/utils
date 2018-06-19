@@ -11,6 +11,7 @@ import { IndexSql } from '../sqlManage/IndexUploadSql';
  * @implements IIndexUploadService
  */
 export class IndexUploadService implements IIndexUploadService {
+
   /**
    * 数据库操作实例
    */
@@ -47,6 +48,24 @@ export class IndexUploadService implements IIndexUploadService {
     ]);
     let loginResult: UploadModel.LoginModel = <UploadModel.LoginModel>result.result;
     return loginResult;
+  }
+  /**
+   * 上传前判断数据库图片是否存在
+   * @param imageName 图片名称
+   * @return Boolean
+   */
+  async imageIsExist(imageName): Promise<any> {
+    let name = await this.dataAccessInstance.execSql(IndexSql.imgIsExists, imageName);
+    let nameRes = name.result[0];
+    if (nameRes.count > 0) {
+      return {
+        isExists: true
+      }
+    } else {
+      return {
+        isExists: false
+      }
+    }
   }
   /**
    * 上传

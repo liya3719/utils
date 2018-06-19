@@ -24,8 +24,14 @@ export class IndexSql {
    */
   static Login: string = `
     select 
-    id
+    id, user_name
     from upload_user where user_name = ? and password = ?
+  `;
+  /**
+   * 上传图片前判断图片是否存在
+   */
+  static imgIsExists: string = `
+    select count(*) as count from upload_images_list where image_url like "%" ?
   `;
   /**
    * 上传图片

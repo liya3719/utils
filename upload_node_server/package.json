@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "complied": "./node_modules/.bin/tsc",
-    "start": "npm run complied && cross-env NODE_ENV=prod ./node_modules/.bin/pm2 start server/server.js -i max --name upload_node_server -e error.log",
+    "start": "npm run complied && cross-env NODE_ENV=prod ./node_modules/.bin/pm2 start server/server.js -i max --name bms-node -e error.log",
     "stop": "./node_modules/.bin/pm2 kill",
     "restart": "npm run stop && npm start",
     "dev": "npm run complied && cross-env NODE_ENV=dev ./node_modules/.bin/devtool server/server.js --watch",
@@ -49,7 +49,7 @@
     "request": "^2.87.0",
     "routing-controllers": "^0.7.6",
     "string-format": "^0.5.0",
-    "typedi": "^0.6.1",
+    "typedi": "^0.6.0",
     "typescript": "^2.7.0",
     "vue": "^2.5.16"
   },
