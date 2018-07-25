@@ -1,0 +1,28 @@
+{
+  "name": "@nat/freedom-middleware-publish",
+  "version": "1.0.1",
+  "description": "发布中间件",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "发布",
+    "发布模块"
+  ],
+  "author": "liya",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^2.0.1",
+    "co-prompt": "^1.0.0",
+    "inquirer": "^3.2.3",
+    "request": "^2.81.0",
+    "shelljs": "^0.7.8"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "devDependencies": {},
+  "_from": "@nat/freedom-middleware-publish@1.0.0",
+  "_resolved": "http://172.16.16.32:7001/@nat/freedom-middleware-publish/download/@nat/freedom-middleware-publish-1.0.0.tgz"
+}
