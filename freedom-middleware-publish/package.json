@@ -1,5 +1,5 @@
 {
-  "name": "@nat/freedom-middleware-publish",
+  "name": "freedom-middleware-publish",
   "version": "1.0.1",
   "description": "发布中间件",
   "main": "index.js",
@@ -22,7 +22,5 @@
   "directories": {
     "lib": "lib"
   },
-  "devDependencies": {},
-  "_from": "@nat/freedom-middleware-publish@1.0.0",
-  "_resolved": "http://172.16.16.32:7001/@nat/freedom-middleware-publish/download/@nat/freedom-middleware-publish-1.0.0.tgz"
+  "devDependencies": {}
 }
