@@ -1,15 +1,16 @@
 <template lang="jade">
   .upload
+    <SliderNav></SliderNav>
     .upload-topbar
       .upload-topbar__username {{userName}}
       .upload-topbar__login(v-show="!isLogin", @click="showLoginModal") 登录
       .upload-topbar__register(v-show="!isLogin",@click="showRegisterModal") 注册
       .upload-topbar__sync(@click="syncGitlabHandler") 同步到gitlab
-    .upload-wrap
+    .upload-wrap.clearfix
       .upload-wrap__input
         input(type="file", id="upload", @change="uploadImgHandler")
       .upload-wrap__btn(@click="uploadHandler") 上传
-    <SliderNav></SliderNav>
+    .upload-image__name {{imageName}}
     .mask(v-show = 'loginModal || registerModal')
       .login-layout.modal(v-show="loginModal")
         .close(@click="showLoginModal") 关闭

@@ -1,40 +1,44 @@
 .list {
-    .title {
-        padding-top: 25px;
-        font-size: 36px;
-        font-weight: bold;
-        text-align: center;
+  .title {
+    padding-top: 25px;
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+  }
+  .image-list {
+    width: 1280px;
+    margin: 35px auto 0;
+    .sub-title {
+      font-weight: bold;
     }
-    .image-list {
-        width: 1280px;
-        margin: 35px auto 0;
-        .sub-title {
-            font-weight: bold;
+    .sub-title,
+    .item {
+      padding: 15px 0;
+      font-size: 16px;
+      text-align: center;
+      border-bottom: #ddd solid 1px;
+      .number {
+        float: left;
+        width: 20%;
+      }
+      .url {
+        float: left;
+        width: 55%;
+        white-space: nowrap;
+      }
+      .thumbnail {
+        float: left;
+        width: 25%;
+        img {
+          width: 150px;
+          height: 150px;
         }
-        .sub-title,
-        .item {
-            padding: 15px 0;
-            font-size: 16px;
-            text-align: center;
-            border-bottom: #ddd solid 1px;
-            .number {
-                float: left;
-                width: 20%;
-            }
-            .url {
-                float: left;
-                width: 55%;
-                white-space: nowrap;
-            }
-            .thumbnail {
-                float: left;
-                width: 25%;
-            }
-        }
-        .item {
-            &:nth-child(odd) {
-                background: #f9f9f9;
-            }
-        }
+      }
     }
+    .item {
+      &:nth-child(odd) {
+        background: #f9f9f9;
+      }
+    }
+  }
 }

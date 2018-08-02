@@ -22,6 +22,7 @@ const CommonService = new commonService();
 })
 export default class uploadView extends BaseView {
   id: number = 0;
+  imageName: string = '';
   isLogin: boolean = false;
   userName: string = '';
   loginModal: boolean = false;
@@ -59,6 +60,7 @@ export default class uploadView extends BaseView {
    */
   uploadImgHandler(e) {
     this.file = e.target.files[0];
+    this.imageName = `您即将上传的图片： ${e.target.files[0].name}`;
   }
   /**
    * 显示登录框
@@ -90,7 +92,7 @@ export default class uploadView extends BaseView {
    * 获取本地保存的用户名
    */
   getUserName() {
-    let userName = localStorage.getItem('user_name');
+    let userName = sessionStorage.getItem('user_name');
     return userName;
   }
   /**
@@ -111,14 +113,13 @@ export default class uploadView extends BaseView {
   async loginHandler() {
     let _self = this;
     let res: IndexModel.loginModel = await Container.get<IndexService>("indexservice").login(_self.login_user_name, _self.login_password);
-    console.log(res);
     if (res.code === 10000) {
       _self.loginModal = false;
       _self.isLogin = true;
       //@ts-ignore
       _self.userName = res.user_name;
       //@ts-ignore
-      localStorage.setItem('user_name', res.user_name)
+      sessionStorage.setItem('user_name', res.user_name)
     } else if (res.code === 20001) {
       _self.loginTips = true;
       _self.isLogin = true;
@@ -138,14 +139,21 @@ export default class uploadView extends BaseView {
     if (_self.uploading) return;
     _self.uploading = true;
     let res: IndexModel.UploadModel = await Container.get<IndexService>("indexservice").upload(form)
-    if (res.code === 10000) {
+    if (res.code === 20009) {
       alert(res.message);
+      _self.imageName = '';
+      _self.uploading = false;
+    } else if (res.code === 10000) {
+      alert(res.message);
+      _self.imageName = '';
       _self.uploading = false;
     } else if (res.code === 20001) {
       alert(res.message);
+      _self.imageName = '';
       _self.uploading = false;
     } else if (res.code === 20008) {
       alert(res.message);
+      _self.imageName = '';
       _self.uploading = false;
     }
   }
@@ -159,8 +167,10 @@ export default class uploadView extends BaseView {
       let res: any = await Container.get<IndexService>('indexservice').syncGitlab();
       if (res.code === 10000) {
         _self.syncStatus = false;
+        alert(res.message);
       } else {
         _self.syncStatus = false;
+        alert(res.message);
       }
     }
   }

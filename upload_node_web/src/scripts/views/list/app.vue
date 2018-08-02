@@ -1,5 +1,6 @@
 <template lang="jade">
   .list
+    <SliderNav></SliderNav>
     h3.title 图片列表
     .image-list
       .sub-title.clearfix
@@ -7,12 +8,12 @@
         .url 链接地址
         .thumbnail 缩略图
       .item.clearfix(v-for="item,index in imgList") 
-        .number {{index}}
+        .number {{index + 1}}
         .url 
           a(:href="item.image_url") {{item.image_url}}
         .thumbnail
           img(:src="item.image_url")
-    <SliderNav></SliderNav>
+    <pageComponent @emitPage="pageChange" :prePage="prePage" :pageIndex="pageIndex"></pageComponent>
 </template>
 
 <style lang="less">
