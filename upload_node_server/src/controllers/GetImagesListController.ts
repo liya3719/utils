@@ -1,4 +1,4 @@
-import { Controller, Get, Body, Param } from 'routing-controllers';
+import { Controller, Get, Body, Param, QueryParam } from 'routing-controllers';
 import { Inject } from 'typedi';
 import { ImagesLst } from '../models/ImgListModel';
 import { GetImagesListService } from '../services/GetImagesListService';
@@ -20,11 +20,11 @@ export class GetImagesList {
    * @param {id} 用户id
    * @return 图片列表实体
    */
-  async getImagesListAction(@Param("id") id: number): Promise<ImagesLst.ImagesLstModel> {
+  async getImagesListAction(@Param("id") id: number, @QueryParam('pageIndex') pageIndex: number, @QueryParam('pageSize') pageSize: number): Promise<ImagesLst.ImagesLstModel> {
     if (isNaN(id)) {
       throw Error('用户id不存在');
     }
-    let imagesList: ImagesLst.ImagesLstModel = await this.GetImagesListServiceInstance.getImagesList(id);
+    let imagesList: ImagesLst.ImagesLstModel = await this.GetImagesListServiceInstance.getImagesList(id, pageIndex, pageSize);
     return imagesList;
   }
 }

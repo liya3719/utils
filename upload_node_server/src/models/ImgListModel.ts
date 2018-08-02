@@ -15,8 +15,16 @@ export module ImagesLst {
      */
     user_id: number;
     /**
-     * 图片url
+     * 第几页
      */
+    pageIndex: number;
+    /**
+     * 显示数据条数
+     */
+    pageSize: number;
+    /**
+    * 图片url
+    */
     images_url: string;
     /**
      * 更新时间

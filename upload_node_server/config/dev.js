@@ -7,17 +7,17 @@ module.exports.loggerSetting = {
 /**
  * 本地上传测试目录
  */
-module.exports.imagesUrl = '本地上传测试目录';
+module.exports.imagesUrl = 'E:\\fe-static\\images\/';
 
 
 //数据库相关配置
 module.exports.dbConfig = {
-    host: "本地数据库host",
-    user: "用户名",
-    password: "密码",
-    database: "数据库名称",
+    host: "localhost",
+    user: "root",
+    password: "qwe#1234",
+    database: "upload",
     connectionLimit: 10,
-    port: "端口号",
+    port: "3306",
     waitForConnections: false,
     multipleStatements: true
 };
