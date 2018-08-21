@@ -14,7 +14,7 @@ import { IndexModel } from '../../models/IndexModel';
 import { IndexService } from '../../services/indexService';
 import { IndexInterface } from '../../interface/Iindex';
 import commonService from '../../common/common';
-const utils = require('@nat/heibao-utils');
+const utils = require('heibao-utils');
 const CommonService = new commonService();
 
 @Component({

@@ -14,8 +14,7 @@
   "author": "liya",
   "license": "ISC",
   "devDependencies": {
-    "@nat/freedom-middleware-mock2easy": "~0.0.2",
-    "@nat/freedom-middleware-webpack2": "1.0.0",
+    "freedom-middleware-webpack2": "1.0.4",
     "@types/axios": "^0.14.0",
     "@types/node": "^8.5.1",
     "@types/vue": "^2.0.0",
@@ -44,6 +43,6 @@
     "/api"
   ],
   "dependencies": {
-    "@nat/heibao-utils": "^1.0.5"
+    "heibao-utils": "0.0.8"
   }
 }
