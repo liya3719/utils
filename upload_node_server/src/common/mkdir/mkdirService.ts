@@ -9,12 +9,12 @@ export class mkdirService {
   /**
    * 判断系统，创建文件夹的路径，dev环境用
    */
-  static createDirPath() {
+  static createDirPath(type: string) {
     var dirPath;
     if (process.platform === 'win32') {
-      dirPath = `E:/fe-static/images/`;
+      dirPath = `E:/fe-static/${type}/`;
     } else {
-      dirPath = '/data/fe-static/images/';
+      dirPath = `/data/fe-static/${type}/`;
     }
     return dirPath;
   }

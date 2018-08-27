@@ -8,6 +8,7 @@
         .url 链接地址
         .thumbnail 缩略图
       .item.clearfix(v-for="item,index in imgList") 
+        .del(:data-id="item.id") 删除
         .number {{index + 1}}
         .url 
           a(:href="item.image_url") {{item.image_url}}

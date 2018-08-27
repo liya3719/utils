@@ -7,4 +7,8 @@ export interface ListInterface {
    * @param id 用户id 
    */
   getImgList(id: number, pageIndex: number, pageSize: number): Promise<any>;
+  /**
+   * 删除单个图片
+   */
+  deleteImageById(id: number): Promise<any>
 }
