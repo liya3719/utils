@@ -24,7 +24,7 @@ export class GetImagesListService implements IGetImagesListService {
    * @param pageSize 加载的条数
    */
   async getImagesList(id: number, pageIndex: number, pageSize: number): Promise<ImagesLst.ImagesLstModel> {
-    let imageListModel: string = GetImagesListSql.GetImagesList;
+    let imageListModel: string = GetImagesListSql.getImageList;
     imageListModel = imageListModel.replace(/{start}/gi, ((pageIndex - 1) * pageSize).toString());
     imageListModel = imageListModel.replace(/{end}/gi, (pageSize).toString())
     let result: any = await this.dataAccessInstance.execSql(imageListModel, [id]);

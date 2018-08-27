@@ -1,0 +1,262 @@
+[2018-08-27 22:01:35.938] [ERROR] MysqlImpl.ts - connect database happen error,and the error stack message is 
+ Error: connect ECONNREFUSED 127.0.0.1:3306
+    at Object.exports._errnoException (util.js:1050:11)
+    at exports._exceptionWithHostPort (util.js:1073:20)
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1097:14)
+    --------------------
+    at Protocol._enqueue (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/protocol/Protocol.js:144:48)
+    at Protocol.handshake (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/protocol/Protocol.js:51:23)
+    at PoolConnection.connect (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/Connection.js:118:18)
+    at Pool.getConnection (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/Pool.js:48:16)
+    at /Users/lee/PersonalData/utils/upload_node_server/build/dataAccess/MysqlImpl.js:40:34
+    at Promise (<anonymous>)
+    at MysqlImpl.execSql (/Users/lee/PersonalData/utils/upload_node_server/build/dataAccess/MysqlImpl.js:39:16)
+    at IndexUploadService.register (/Users/lee/PersonalData/utils/upload_node_server/build/services/IndexUploadService.js:26:52)
+    at IndexUpload.registerAction (/Users/lee/PersonalData/utils/upload_node_server/build/controllers/IndexUploadController.js:37:54)
+    at ActionMetadata.callMethod (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_routing-controllers@0.7.7@routing-controllers/metadata/ActionMetadata.js:108:48)
+    at /Users/lee/PersonalData/utils/upload_node_server/node_modules/_routing-controllers@0.7.7@routing-controllers/RoutingControllers.js:92:140
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:109:7)
+[2018-08-27 22:01:42.378] [ERROR] MysqlImpl.ts - connect database happen error,and the error stack message is 
+ Error: connect ECONNREFUSED 127.0.0.1:3306
+    at Object.exports._errnoException (util.js:1050:11)
+    at exports._exceptionWithHostPort (util.js:1073:20)
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1097:14)
+    --------------------
+    at Protocol._enqueue (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/protocol/Protocol.js:144:48)
+    at Protocol.handshake (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/protocol/Protocol.js:51:23)
+    at PoolConnection.connect (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/Connection.js:118:18)
+    at Pool.getConnection (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/Pool.js:48:16)
+    at /Users/lee/PersonalData/utils/upload_node_server/build/dataAccess/MysqlImpl.js:40:34
+    at Promise (<anonymous>)
+    at MysqlImpl.execSql (/Users/lee/PersonalData/utils/upload_node_server/build/dataAccess/MysqlImpl.js:39:16)
+    at IndexUploadService.register (/Users/lee/PersonalData/utils/upload_node_server/build/services/IndexUploadService.js:26:52)
+    at IndexUpload.registerAction (/Users/lee/PersonalData/utils/upload_node_server/build/controllers/IndexUploadController.js:37:54)
+    at ActionMetadata.callMethod (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_routing-controllers@0.7.7@routing-controllers/metadata/ActionMetadata.js:108:48)
+    at /Users/lee/PersonalData/utils/upload_node_server/node_modules/_routing-controllers@0.7.7@routing-controllers/RoutingControllers.js:92:140
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:109:7)
+[2018-08-27 22:03:42.392] [ERROR] MysqlImpl.ts - connect database happen error,and the error stack message is 
+ Error: ER_ACCESS_DENIED_ERROR: Access denied for user 'root'@'localhost' (using password: YES)
+    at Handshake.Sequence._packetToError (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Handshake.ErrorPacket (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/protocol/sequences/Handshake.js:124:18)
+    at Protocol._parsePacket (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/protocol/Protocol.js:278:23)
+    at Parser.write (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/Connection.js:91:28)
+    at Socket.<anonymous> (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/Connection.js:502:10)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:191:7)
+    at readableAddChunk (_stream_readable.js:178:18)
+    at Socket.Readable.push (_stream_readable.js:136:10)
+    at TCP.onread (net.js:560:20)
+    --------------------
+    at Protocol._enqueue (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/protocol/Protocol.js:144:48)
+    at Protocol.handshake (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/protocol/Protocol.js:51:23)
+    at PoolConnection.connect (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/Connection.js:118:18)
+    at Pool.getConnection (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/Pool.js:48:16)
+    at /Users/lee/PersonalData/utils/upload_node_server/build/dataAccess/MysqlImpl.js:40:34
+    at Promise (<anonymous>)
+    at MysqlImpl.execSql (/Users/lee/PersonalData/utils/upload_node_server/build/dataAccess/MysqlImpl.js:39:16)
+    at IndexUploadService.register (/Users/lee/PersonalData/utils/upload_node_server/build/services/IndexUploadService.js:26:52)
+    at IndexUpload.registerAction (/Users/lee/PersonalData/utils/upload_node_server/build/controllers/IndexUploadController.js:37:54)
+    at ActionMetadata.callMethod (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_routing-controllers@0.7.7@routing-controllers/metadata/ActionMetadata.js:108:48)
+    at /Users/lee/PersonalData/utils/upload_node_server/node_modules/_routing-controllers@0.7.7@routing-controllers/RoutingControllers.js:92:140
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:109:7)
+[2018-08-27 22:15:58.467] [ERROR] MysqlImpl.ts - connect database happen error,and the error stack message is 
+ Error: ER_ACCESS_DENIED_ERROR: Access denied for user 'root'@'localhost' (using password: YES)
+    at Handshake.Sequence._packetToError (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Handshake.ErrorPacket (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/protocol/sequences/Handshake.js:124:18)
+    at Protocol._parsePacket (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/protocol/Protocol.js:278:23)
+    at Parser.write (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/Connection.js:91:28)
+    at Socket.<anonymous> (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/Connection.js:502:10)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:191:7)
+    at readableAddChunk (_stream_readable.js:178:18)
+    at Socket.Readable.push (_stream_readable.js:136:10)
+    at TCP.onread (net.js:560:20)
+    --------------------
+    at Protocol._enqueue (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/protocol/Protocol.js:144:48)
+    at Protocol.handshake (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/protocol/Protocol.js:51:23)
+    at PoolConnection.connect (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/Connection.js:118:18)
+    at Pool.getConnection (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/Pool.js:48:16)
+    at /Users/lee/PersonalData/utils/upload_node_server/build/dataAccess/MysqlImpl.js:40:34
+    at Promise (<anonymous>)
+    at MysqlImpl.execSql (/Users/lee/PersonalData/utils/upload_node_server/build/dataAccess/MysqlImpl.js:39:16)
+    at GetImagesListService.getImagesList (/Users/lee/PersonalData/utils/upload_node_server/build/services/GetImagesListService.js:30:52)
+    at GetImagesList.getImagesListAction (/Users/lee/PersonalData/utils/upload_node_server/build/controllers/GetImagesListController.js:31:66)
+    at ActionMetadata.callMethod (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_routing-controllers@0.7.7@routing-controllers/metadata/ActionMetadata.js:108:48)
+    at /Users/lee/PersonalData/utils/upload_node_server/node_modules/_routing-controllers@0.7.7@routing-controllers/RoutingControllers.js:92:140
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:109:7)
+[2018-08-27 22:16:00.612] [ERROR] MysqlImpl.ts - connect database happen error,and the error stack message is 
+ Error: ER_ACCESS_DENIED_ERROR: Access denied for user 'root'@'localhost' (using password: YES)
+    at Handshake.Sequence._packetToError (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Handshake.ErrorPacket (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/protocol/sequences/Handshake.js:124:18)
+    at Protocol._parsePacket (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/protocol/Protocol.js:278:23)
+    at Parser.write (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/Connection.js:91:28)
+    at Socket.<anonymous> (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/Connection.js:502:10)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:191:7)
+    at readableAddChunk (_stream_readable.js:178:18)
+    at Socket.Readable.push (_stream_readable.js:136:10)
+    at TCP.onread (net.js:560:20)
+    --------------------
+    at Protocol._enqueue (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/protocol/Protocol.js:144:48)
+    at Protocol.handshake (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/protocol/Protocol.js:51:23)
+    at PoolConnection.connect (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/Connection.js:118:18)
+    at Pool.getConnection (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/Pool.js:48:16)
+    at /Users/lee/PersonalData/utils/upload_node_server/build/dataAccess/MysqlImpl.js:40:34
+    at Promise (<anonymous>)
+    at MysqlImpl.execSql (/Users/lee/PersonalData/utils/upload_node_server/build/dataAccess/MysqlImpl.js:39:16)
+    at GetImagesListService.getImagesList (/Users/lee/PersonalData/utils/upload_node_server/build/services/GetImagesListService.js:30:52)
+    at GetImagesList.getImagesListAction (/Users/lee/PersonalData/utils/upload_node_server/build/controllers/GetImagesListController.js:31:66)
+    at ActionMetadata.callMethod (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_routing-controllers@0.7.7@routing-controllers/metadata/ActionMetadata.js:108:48)
+    at /Users/lee/PersonalData/utils/upload_node_server/node_modules/_routing-controllers@0.7.7@routing-controllers/RoutingControllers.js:92:140
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:109:7)
+[2018-08-27 22:15:20.008] [ERROR] MysqlImpl.ts - connect database happen error,and the error stack message is 
+ Error: ER_ACCESS_DENIED_ERROR: Access denied for user 'root'@'localhost' (using password: YES)
+    at Handshake.Sequence._packetToError (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Handshake.ErrorPacket (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/protocol/sequences/Handshake.js:124:18)
+    at Protocol._parsePacket (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/protocol/Protocol.js:278:23)
+    at Parser.write (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/Connection.js:91:28)
+    at Socket.<anonymous> (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/Connection.js:502:10)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:191:7)
+    at readableAddChunk (_stream_readable.js:178:18)
+    at Socket.Readable.push (_stream_readable.js:136:10)
+    at TCP.onread (net.js:560:20)
+    --------------------
+    at Protocol._enqueue (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/protocol/Protocol.js:144:48)
+    at Protocol.handshake (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/protocol/Protocol.js:51:23)
+    at PoolConnection.connect (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/Connection.js:118:18)
+    at Pool.getConnection (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/Pool.js:48:16)
+    at /Users/lee/PersonalData/utils/upload_node_server/build/dataAccess/MysqlImpl.js:40:34
+    at Promise (<anonymous>)
+    at MysqlImpl.execSql (/Users/lee/PersonalData/utils/upload_node_server/build/dataAccess/MysqlImpl.js:39:16)
+    at GetImagesListService.getImagesList (/Users/lee/PersonalData/utils/upload_node_server/build/services/GetImagesListService.js:30:52)
+    at GetImagesList.getImagesListAction (/Users/lee/PersonalData/utils/upload_node_server/build/controllers/GetImagesListController.js:31:66)
+    at ActionMetadata.callMethod (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_routing-controllers@0.7.7@routing-controllers/metadata/ActionMetadata.js:108:48)
+    at /Users/lee/PersonalData/utils/upload_node_server/node_modules/_routing-controllers@0.7.7@routing-controllers/RoutingControllers.js:92:140
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:109:7)
+[2018-08-27 22:17:19.966] [ERROR] MysqlImpl.ts - connect database happen error,and the error stack message is 
+ Error: ER_ACCESS_DENIED_ERROR: Access denied for user 'root'@'localhost' (using password: YES)
+    at Handshake.Sequence._packetToError (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Handshake.ErrorPacket (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/protocol/sequences/Handshake.js:124:18)
+    at Protocol._parsePacket (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/protocol/Protocol.js:278:23)
+    at Parser.write (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/Connection.js:91:28)
+    at Socket.<anonymous> (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/Connection.js:502:10)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:191:7)
+    at readableAddChunk (_stream_readable.js:178:18)
+    at Socket.Readable.push (_stream_readable.js:136:10)
+    at TCP.onread (net.js:560:20)
+    --------------------
+    at Protocol._enqueue (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/protocol/Protocol.js:144:48)
+    at Protocol.handshake (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/protocol/Protocol.js:51:23)
+    at PoolConnection.connect (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/Connection.js:118:18)
+    at Pool.getConnection (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/Pool.js:48:16)
+    at /Users/lee/PersonalData/utils/upload_node_server/build/dataAccess/MysqlImpl.js:40:34
+    at Promise (<anonymous>)
+    at MysqlImpl.execSql (/Users/lee/PersonalData/utils/upload_node_server/build/dataAccess/MysqlImpl.js:39:16)
+    at GetImagesListService.getImagesList (/Users/lee/PersonalData/utils/upload_node_server/build/services/GetImagesListService.js:30:52)
+    at GetImagesList.getImagesListAction (/Users/lee/PersonalData/utils/upload_node_server/build/controllers/GetImagesListController.js:31:66)
+    at ActionMetadata.callMethod (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_routing-controllers@0.7.7@routing-controllers/metadata/ActionMetadata.js:108:48)
+    at /Users/lee/PersonalData/utils/upload_node_server/node_modules/_routing-controllers@0.7.7@routing-controllers/RoutingControllers.js:92:140
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:109:7)
+[2018-08-27 22:26:25.539] [ERROR] MysqlImpl.ts - connect database happen error,and the error stack message is 
+ Error: ER_ACCESS_DENIED_ERROR: Access denied for user 'root'@'localhost' (using password: YES)
+    at Handshake.Sequence._packetToError (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Handshake.ErrorPacket (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/protocol/sequences/Handshake.js:124:18)
+    at Protocol._parsePacket (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/protocol/Protocol.js:278:23)
+    at Parser.write (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/Connection.js:91:28)
+    at Socket.<anonymous> (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/Connection.js:502:10)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:191:7)
+    at readableAddChunk (_stream_readable.js:178:18)
+    at Socket.Readable.push (_stream_readable.js:136:10)
+    at TCP.onread (net.js:560:20)
+    --------------------
+    at Protocol._enqueue (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/protocol/Protocol.js:144:48)
+    at Protocol.handshake (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/protocol/Protocol.js:51:23)
+    at PoolConnection.connect (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/Connection.js:118:18)
+    at Pool.getConnection (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/Pool.js:48:16)
+    at /Users/lee/PersonalData/utils/upload_node_server/build/dataAccess/MysqlImpl.js:40:34
+    at Promise (<anonymous>)
+    at MysqlImpl.execSql (/Users/lee/PersonalData/utils/upload_node_server/build/dataAccess/MysqlImpl.js:39:16)
+    at GetImagesListService.getImagesList (/Users/lee/PersonalData/utils/upload_node_server/build/services/GetImagesListService.js:30:52)
+    at GetImagesList.getImagesListAction (/Users/lee/PersonalData/utils/upload_node_server/build/controllers/GetImagesListController.js:31:66)
+    at ActionMetadata.callMethod (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_routing-controllers@0.7.7@routing-controllers/metadata/ActionMetadata.js:108:48)
+    at /Users/lee/PersonalData/utils/upload_node_server/node_modules/_routing-controllers@0.7.7@routing-controllers/RoutingControllers.js:92:140
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:109:7)
+[2018-08-27 22:26:26.374] [ERROR] MysqlImpl.ts - connect database happen error,and the error stack message is 
+ Error: ER_ACCESS_DENIED_ERROR: Access denied for user 'root'@'localhost' (using password: YES)
+    at Handshake.Sequence._packetToError (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Handshake.ErrorPacket (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/protocol/sequences/Handshake.js:124:18)
+    at Protocol._parsePacket (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/protocol/Protocol.js:278:23)
+    at Parser.write (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/Connection.js:91:28)
+    at Socket.<anonymous> (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/Connection.js:502:10)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:191:7)
+    at readableAddChunk (_stream_readable.js:178:18)
+    at Socket.Readable.push (_stream_readable.js:136:10)
+    at TCP.onread (net.js:560:20)
+    --------------------
+    at Protocol._enqueue (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/protocol/Protocol.js:144:48)
+    at Protocol.handshake (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/protocol/Protocol.js:51:23)
+    at PoolConnection.connect (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/Connection.js:118:18)
+    at Pool.getConnection (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/Pool.js:48:16)
+    at /Users/lee/PersonalData/utils/upload_node_server/build/dataAccess/MysqlImpl.js:40:34
+    at Promise (<anonymous>)
+    at MysqlImpl.execSql (/Users/lee/PersonalData/utils/upload_node_server/build/dataAccess/MysqlImpl.js:39:16)
+    at GetImagesListService.getImagesList (/Users/lee/PersonalData/utils/upload_node_server/build/services/GetImagesListService.js:30:52)
+    at GetImagesList.getImagesListAction (/Users/lee/PersonalData/utils/upload_node_server/build/controllers/GetImagesListController.js:31:66)
+    at ActionMetadata.callMethod (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_routing-controllers@0.7.7@routing-controllers/metadata/ActionMetadata.js:108:48)
+    at /Users/lee/PersonalData/utils/upload_node_server/node_modules/_routing-controllers@0.7.7@routing-controllers/RoutingControllers.js:92:140
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:109:7)
+[2018-08-27 22:28:26.441] [ERROR] MysqlImpl.ts - connect database happen error,and the error stack message is 
+ Error: ER_ACCESS_DENIED_ERROR: Access denied for user 'root'@'localhost' (using password: YES)
+    at Handshake.Sequence._packetToError (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Handshake.ErrorPacket (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/protocol/sequences/Handshake.js:124:18)
+    at Protocol._parsePacket (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/protocol/Protocol.js:278:23)
+    at Parser.write (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/Connection.js:91:28)
+    at Socket.<anonymous> (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/Connection.js:502:10)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:191:7)
+    at readableAddChunk (_stream_readable.js:178:18)
+    at Socket.Readable.push (_stream_readable.js:136:10)
+    at TCP.onread (net.js:560:20)
+    --------------------
+    at Protocol._enqueue (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/protocol/Protocol.js:144:48)
+    at Protocol.handshake (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/protocol/Protocol.js:51:23)
+    at PoolConnection.connect (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/Connection.js:118:18)
+    at Pool.getConnection (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_mysql@2.16.0@mysql/lib/Pool.js:48:16)
+    at /Users/lee/PersonalData/utils/upload_node_server/build/dataAccess/MysqlImpl.js:40:34
+    at Promise (<anonymous>)
+    at MysqlImpl.execSql (/Users/lee/PersonalData/utils/upload_node_server/build/dataAccess/MysqlImpl.js:39:16)
+    at GetImagesListService.getImagesList (/Users/lee/PersonalData/utils/upload_node_server/build/services/GetImagesListService.js:30:52)
+    at GetImagesList.getImagesListAction (/Users/lee/PersonalData/utils/upload_node_server/build/controllers/GetImagesListController.js:31:66)
+    at ActionMetadata.callMethod (/Users/lee/PersonalData/utils/upload_node_server/node_modules/_routing-controllers@0.7.7@routing-controllers/metadata/ActionMetadata.js:108:48)
+    at /Users/lee/PersonalData/utils/upload_node_server/node_modules/_routing-controllers@0.7.7@routing-controllers/RoutingControllers.js:92:140
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:109:7)

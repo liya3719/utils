@@ -1,13 +1,7 @@
 const webpack = require("webpack");
-const fs = require("fs");
 const path = require("path");
 const baseDir = process.cwd();
-const srcDir = path.resolve(baseDir, 'src');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const CompressionPlugin = require("compression-webpack-plugin");
 const pkg = require("./package.json");
-const projectName = pkg.name;
-const version = pkg.version;
 
 
 module.exports = function () {

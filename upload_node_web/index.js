@@ -2,12 +2,11 @@ const path = require('path');
 const fs = require('fs');
 const program = require('commander');
 const pkg = require("./package.json");
-const webpackBuild = require("@nat/freedom-middleware-webpack2");
+const webpackBuild = require("freedom-middleware-webpack2");
 const proxyMiddleware = require('http-proxy-middleware');
 const app = require("express")();
 const colors = require("colors");
 const serverStatic = require("serve-static");
-
 const projectName = pkg.name;
 const version = pkg.version;
 const baseDir = process.cwd();
@@ -61,7 +60,7 @@ if (originImportFileContent != commonImportFileContent) {
 const params = {
   port: 8886,
   env: "dev",
-  publicPath: `//static.51talk.com/${projectName}/${version}`,
+  publicPath: ``,
   build: `build/${projectName}/${version}`,
   proxy: {
     context: pkg.proxy,

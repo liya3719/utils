@@ -1,5 +1,5 @@
-import { Service } from 'typedi';
 import axios from 'axios';
+import { Service } from 'typedi';
 import { ListInterface } from '../interface/IList';
 @Service('imglist')
 export class ListService implements ListInterface {

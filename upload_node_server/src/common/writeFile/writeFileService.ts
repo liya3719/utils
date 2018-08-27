@@ -14,7 +14,7 @@ export class writeFileService {
   async writeFileHandler(file, id): Promise<any> {
     return new Promise((resolve, reject) => {
       // 上传图片前先创建保存图片的文件夹
-      let dirPath = mkdirService.createDirPath();
+      let dirPath = mkdirService.createDirPath('images');
       mkdirService.isCreateFolder(dirPath);
       // 判断图片大小，如果超过150kb，提示错误
       if (file.size > 153600) {

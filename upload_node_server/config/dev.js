@@ -7,7 +7,7 @@ module.exports.loggerSetting = {
 /**
  * 本地上传测试目录
  */
-module.exports.imagesUrl = 'E:\\fe-static\\images\/';
+module.exports.imagesUrl = '/Users/lee/PersonalData/upload_images';
 
 
 //数据库相关配置
